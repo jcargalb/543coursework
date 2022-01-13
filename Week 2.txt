@@ -1,0 +1,17 @@
+#tidyverse library
+library(tidyverse)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='wastedata2.csv'
+link=paste0(location,file)
+
+wastedata<-read.csv(link)
+
+#Names of the columns
+names(wastedata)
+
+#Keeping 2018 observations and dropping the specific materials categories
+newdata <- subset(wastedata, Year == "2018", -Materials.Collected.for.Recycling)
+
+
