@@ -42,19 +42,24 @@ titleText='Metric Tons of Electronics Recycled in Washington State 2009-2018'
 sourceText='Source: WA State Department of Ecology'
 
 plot2 = plot1 + labs(title=titleText,
-                     x =NULL, 
-                     y = NULL,
+                     x ="Year", 
+                     y = "Annual Tonnage",
                      caption = sourceText)
 					 
 plot2
 
-#Average tons of recycled electronics per annum from 2009-2018
+#Average tons of recycled electronics perannum from 2009-2018
 mean(tenyr$Annual.Tonnage)
 
+#Adds dashed line at mean tonnage level
 plot3 = plot2 + geom_hline(yintercept = 28196.4,
                            linetype="dashed", 
                            size=1.5,
-                           alpha=0.5)
+                           alpha=0.5, axes=TRUE)
 
+plot3
 
-					  
+#Adds year labels to x axis
+plot4 = plot3 + scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018)) 
+                              
+plot4
