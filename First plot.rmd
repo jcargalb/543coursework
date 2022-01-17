@@ -35,7 +35,7 @@ base = ggplot(data = tenyr,
 plot1 = base + geom_bar(fill ="gray",
                         stat = 'identity')
 						
-plot 1
+plot1
 
 #Title and caption text
 titleText='Metric Tons of Electronics Recycled in Washington State 2009-2018'
@@ -56,9 +56,5 @@ plot3 = plot2 + geom_hline(yintercept = 28196.4,
                            size=1.5,
                            alpha=0.5)
 
-#for "unit_format"						   
-library(scales) 
 
-#plot4 = plot3 + scale_y_continuous(breaks=c(15000,20000, 25000, 30000, 35000,40000),
-                                   limits = c(15000, 40000))
-								   
+					  
