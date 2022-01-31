@@ -32,7 +32,7 @@ base = ggplot(data = tenyr,
                  y = Annual.Tonnage))
 
 #plot1 aesthetics				 
-plot1 = base + geom_bar(fill ="#009E73",
+plot1 = base + geom_bar(fill ="00340",
                         stat = 'identity')
 						
 plot1
@@ -60,15 +60,6 @@ plot3 = plot2 + geom_hline(yintercept = 28196.4,
 plot3
 
 #Adds year labels to x axis
-plot4 = plot3 + scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018)) 
+plot4 = plot3 + scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018))
                               
 plot4
-
-#Changes y axis labels
-plot5 = plot4 + scale_y_continuous(breaks=c(0, 28196 ,40000))
-                                   
-plot5
-
-#Gets rid of grid background
-plot6 = plot5 + theme_classic()
-plot6
