@@ -9,6 +9,10 @@ link=paste0(location,file)
 
 wastedata<-read.csv(link)
 
+#Reorders manual categories
+wastedata$Category=factor(wastedata$Category,
+                           levels=c("Plastic","Other", "MRW","Glass","Paper", "Organics", "Metal", "C&D"))
+
 #Multi-category barplot based on waste categories
 plot1=ggplot(wastedata, aes(fill=Category, y=Tonnage, x=Year)) + 
     geom_bar(position="dodge", stat="identity")
@@ -46,4 +50,3 @@ plot5
 plot6=plot5+theme_classic()
 
 plot6
-
