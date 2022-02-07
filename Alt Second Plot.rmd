@@ -8,3 +8,16 @@ file='wastedata3.csv'
 link=paste0(location,file)
 
 wastedata<-read.csv(link)
+
+base1=ggplot(data=wastedata, 
+             aes(x=Year, y=Tonnage,
+                 fill=Category))
+                 
+barDodge= base1 +  geom_bar(stat="identity",
+                            position ='dodge') 
+                            
+base2 = ggplot(wastedata, aes(x=Year,y=Category)) 
+
+tablePlot = base2 + geom_point(aes(size = Tonnage))
+
+#I like this format generally, but there isn't enough change in the data for this to effective here. That's still the case even if I use percentages.
