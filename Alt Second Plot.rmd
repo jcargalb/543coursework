@@ -1,0 +1,10 @@
+#tidyverse and ggplot2 libraries
+library(tidyverse)
+library(ggplot2)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='wastedata3.csv'
+link=paste0(location,file)
+
+wastedata<-read.csv(link)
