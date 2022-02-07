@@ -1,6 +1,13 @@
 #tidyverse library
 library(tidyverse)
 library(ggplot2)
+library(magrittr)
+library(rio)
+library(reshape2)
+library(cluster)
+library(MASS) 
+library(reshape2) 
+library(reshape)
 
 #Retrieve the data from my github
 location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
@@ -9,3 +16,17 @@ link=paste0(location,file)
 
 sounders<-read.csv(link)
 
+safeINS_long=melt(sounders,id.vars = sounders$Name)
+
+base  = ggplot(safeINS_long, 
+               aes(x = variable, 
+                   y = value, 
+                   group = city)) + #new
+        geom_polygon(fill = 'green',
+                     col='blue') 
+
+plot1 = base + coord_polar()
+
+plot2 = plot1 + facet_wrap(~city,# one plot per city
+                           ncol = 10) # ten plot per row
+plot2

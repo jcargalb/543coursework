@@ -1,10 +1,37 @@
-﻿Name,Goals,Assists,SOT %,Pass %
-R. Ruidiaz,17,1,0.417582418,0.834
-F. Montero,7,6,0.481481481,0.74
-W. Bruin,3,4,0.333333333,0.608
-K. Rowe,1,3,0.185185185,0.779
-Joao Paulo,3,11,0.392857143,0.821
-A. Roldan,1,2,0.25,0.821
-C. Roldan,6,14,0.264150943,0.801
-J. Atencio,0,4,0.666666667,0.818
-D. Levya,0,3,0.375,0.844
+﻿Name,Variable,Value
+R. Ruidiaz,Goals,0.894736842
+F. Montero,Goals,0.368421053
+W. Bruin,Goals,0.157894737
+K. Rowe,Goals,0.052631579
+Joao Paulo,Goals,0.157894737
+A. Roldan,Goals,0.052631579
+C. Roldan,Goals,0.315789474
+J. Atencio,Goals,0
+D. Levya,Goals,0
+R. Ruidiaz,SOT %,0.417582418
+F. Montero,SOT %,0.481481481
+W. Bruin,SOT %,0.333333333
+K. Rowe,SOT %,0.185185185
+Joao Paulo,SOT %,0.392857143
+A. Roldan,SOT %,0.25
+C. Roldan,SOT %,0.264150943
+J. Atencio,SOT %,0.666666667
+D. Levya,SOT %,0.375
+R. Ruidiaz,Pass %,0.834
+F. Montero,Pass %,0.74
+W. Bruin,Pass %,0.608
+K. Rowe,Pass %,0.779
+Joao Paulo,Pass %,0.821
+A. Roldan,Pass %,0.821
+C. Roldan,Pass %,0.801
+J. Atencio,Pass %,0.818
+D. Levya,Pass %,0.844
+R. Ruidiaz,Assist,0.071428571
+F. Montero,Assist,0.428571429
+W. Bruin,Assist,0.285714286
+K. Rowe,Assist,0.214285714
+Joao Paulo,Assist,0.785714286
+A. Roldan,Assist,0.142857143
+C. Roldan,Assist,1
+J. Atencio,Assist,0.285714286
+D. Levya,Assist,0.214285714
