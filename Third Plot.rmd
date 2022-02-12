@@ -2,6 +2,7 @@
 library(tidyverse)
 library(ggplot2)
 library(rio)
+library(viridis)
 
 #Retrieve the data from my github
 location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
@@ -38,4 +39,10 @@ map2=colMap + scale_fill_gradient(low = 'blue',
 
 map2
 
+map3=map2+scale_fill_viridis_c(option = "C")
 
+map3
+
+map4=map3+labs(fill="Death Rate")
+
+map4
