@@ -10,5 +10,32 @@ link=paste0(location,file)
 
 deathrate<-read.csv(link)
 
-linkMap="https://github.com/jcargalb/543coursework/blob/35b554ee467894e289f4a5e7c8ee2bdcaca09d07/worldMap.geojson" 
+linkMap="https://raw.githubusercontent.com/jcargalb/543coursework/main/worldMap.geojson" 
+
+library(sf)
+                           
+mapWorld=read_sf(linkMap)
+
+head(mapWorld)
+
+mapWorldVars=merge(mapWorld, deathrate, by='ISO3')
+
+library(ggplot2)
+
+base=ggplot(data=mapWorld) + geom_sf(fill='grey90',
+                                     color=NA) + theme_classic()
+                                     
+base
+
+colMap=base + geom_sf(data=mapWorldVars,
+                       aes(fill=rate),
+                       color=NA)
+                       
+colMap
+
+map2=colMap + scale_fill_gradient(low = 'blue',
+                             high= 'red')
+
+map2
+
 
