@@ -1,0 +1,48 @@
+#tidyverse and ggplot2 libraries
+library(tidyverse)
+library(ggplot2)
+library(rio)
+library(viridis)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='deathrate.csv'
+link=paste0(location,file)
+
+deathrate<-read.csv(link)
+
+linkMap="https://raw.githubusercontent.com/jcargalb/543coursework/main/worldMap.geojson" 
+
+library(sf)
+                           
+mapWorld=read_sf(linkMap)
+
+head(mapWorld)
+
+mapWorldVars=merge(mapWorld, deathrate, by='ISO3')
+
+library(ggplot2)
+
+base=ggplot(data=mapWorld) + geom_sf(fill='grey90',
+                                     color=NA) + theme_classic()
+                                     
+base
+
+colMap=base + geom_sf(data=mapWorldVars,
+                       aes(fill=rate),
+                       color=NA)
+                       
+colMap
+
+map2=colMap + scale_fill_gradient(low = 'blue',
+                             high= 'red')
+
+map2
+
+map3=map2+scale_fill_viridis_c(option = "C")
+
+map3
+
+map4=map3+labs(fill="Death Rate")
+
+map4

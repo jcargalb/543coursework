@@ -1,0 +1,200 @@
+ISO3,country,rate
+AFG,Afghanistan,6.393
+ALB,Albania,7.997
+DZA,Algeria,4.723
+AGO,Angola,8.155
+ATG,Antigua and Barbuda,6.409
+ARG,Argentina,7.612
+ARM,Armenia,9.862
+ABW,Aruba,9.135
+AUS,Australia,6.622
+AUT,Austria,9.896
+AZE,Azerbaijan,6.808
+BHS,Bahamas,6.817
+BHR,Bahrain,2.416
+BGD,Bangladesh,5.545
+BRB,Barbados,9.042
+BLR,Belarus,12.557
+BEL,Belgium,9.789
+BLZ,Belize,4.744
+BEN,Benin,8.809
+BTN,Bhutan,6.265
+BOL,Bolivia,6.789
+BIH,Bosnia and Herzegovina,10.8
+BWA,Botswana,5.825
+BRA,Brazil,6.503
+BRN,Brunei,4.513
+BGR,Bulgaria,15.433
+BFA,Burkina Faso,8.066
+BDI,Burundi,7.888
+KHM,Cambodia,6.019
+CMR,Cameroon,9.191
+CAN,Canada,7.758
+CPV,Cape Verde,5.611
+CAF,Central African Republic,12.178
+TCD,Chad,12.045
+CHL,Chile,6.215
+CHN,China,7.261
+COL,Colombia,5.606
+COM,Comoros,7.198
+CRI,Costa Rica,5.122
+HRV,Croatia,13.17
+CUB,Cuba,9.064
+CUW,Curacao,8.892
+CYP,Cyprus,7.075
+CZE,Czech Republic,10.571
+DNK,Denmark,9.783
+DJI,Djibouti,7.068
+DOM,Dominican Republic,6.177
+COD,DR Congo,9.415
+ECU,Ecuador,5.121
+EGY,Egypt,5.808
+SLV,El Salvador,7.057
+GNQ,Equatorial Guinea,9.235
+ERI,Eritrea,7.108
+EST,Estonia,11.727
+SWZ,Eswatini,9.321
+ETH,Ethiopia,6.529
+FJI,Fiji,8.229
+FIN,Finland,9.795
+FRA,France,9.317
+GUF,French Guiana,2.956
+PYF,French Polynesia,5.7
+GAB,Gabon,6.822
+GMB,Gambia,7.817
+GEO,Georgia,12.816
+DEU,Germany,11.275
+GHA,Ghana,7.284
+GRC,Greece,10.924
+GRD,Grenada,9.547
+GLP,Guadeloupe,8.31
+GUM,Guam,5.249
+GTM,Guatemala,4.741
+GIN,Guinea,8.369
+GNB,Guinea-Bissau,9.557
+GUY,Guyana,7.52
+HTI,Haiti,8.51
+HND,Honduras,4.453
+HKG,Hong Kong,6.716
+HUN,Hungary,12.613
+ISL,Iceland,6.736
+IND,India,7.273
+IDN,Indonesia,6.51
+IRN,Iran,4.866
+IRQ,Iraq,4.773
+IRL,Ireland,6.139
+ISR,Israel,5.328
+ITA,Italy,10.566
+CIV,Ivory Coast,10.003
+JAM,Jamaica,7.588
+JPN,Japan,10.646
+JOR,Jordan,3.887
+KAZ,Kazakhstan,7.172
+KEN,Kenya,5.483
+KIR,Kiribati,6.32
+KWT,Kuwait,2.787
+KGZ,Kyrgyzstan,6.011
+LAO,Laos,6.431
+LVA,Latvia,14.669
+LBN,Lebanon,4.419
+LSO,Lesotho,14.144
+LBR,Liberia,7.494
+LBY,Libya,5.1
+LTU,Lithuania,13.737
+LUX,Luxembourg,7.125
+MAC,Macau,4.002
+MDG,Madagascar,6.017
+MWI,Malawi,6.61
+MYS,Malaysia,5.139
+MDV,Maldives,2.821
+MLI,Mali,9.586
+MLT,Malta,8.385
+MTQ,Martinique,9.2
+MRT,Mauritania,7.186
+MUS,Mauritius,8.462
+MYT,Mayotte,2.71
+MEX,Mexico,6.039
+FSM,Micronesia,6.626
+MDA,Moldova,11.697
+MNG,Mongolia,6.351
+MNE,Montenegro,10.729
+MAR,Morocco,5.072
+MOZ,Mozambique,8.42
+MMR,Myanmar,8.24
+NAM,Namibia,8.063
+NPL,Nepal,6.358
+NLD,Netherlands,8.812
+NCL,New Caledonia,5.807
+NZL,New Zealand,7.033
+NIC,Nicaragua,5.077
+NER,Niger,8.199
+NGA,Nigeria,11.771
+PRK,North Korea,9.159
+NOR,Norway,7.979
+OMN,Oman,2.446
+PAK,Pakistan,6.934
+PSE,Palestine,3.462
+PAN,Panama,5.098
+PNG,Papua New Guinea,7.408
+PRY,Paraguay,5.527
+PER,Peru,5.539
+PHL,Philippines,5.9
+POL,Poland,10.201
+PRT,Portugal,10.702
+PRI,Puerto Rico,9.54
+QAT,Qatar,1.244
+COG,Republic of the Congo,6.701
+REU,Reunion,6.256
+ROU,Romania,13.099
+RUS,Russia,12.785
+RWA,Rwanda,5.235
+LCA,Saint Lucia,7.229
+VCT,Saint Vincent and the Grenadines,9.281
+WSM,Samoa,5.236
+STP,Sao Tome and Principe,4.819
+SAU,Saudi Arabia,3.513
+SEN,Senegal,5.691
+SRB,Serbia,13.194
+SYC,Seychelles,7.853
+SLE,Sierra Leone,11.698
+SGP,Singapore,4.6
+SVK,Slovakia,9.968
+SVN,Slovenia,10.044
+SLB,Solomon Islands,4.255
+SOM,Somalia,10.778
+ZAF,South Africa,9.494
+KOR,South Korea,6.111
+SSD,South Sudan,10.43
+ESP,Spain,9.115
+LKA,Sri Lanka,6.717
+SDN,Sudan,7.171
+SUR,Suriname,7.377
+SWE,Sweden,9.165
+CHE,Switzerland,8.051
+SYR,Syria,5.232
+TWN,Taiwan,7.631
+TJK,Tajikistan,4.836
+TZA,Tanzania,6.387
+THA,Thailand,7.746
+TLS,Timor-Leste,5.979
+TGO,Togo,8.426
+TON,Tonga,7.128
+TTO,Trinidad and Tobago,8.459
+TUN,Tunisia,6.267
+TUR,Turkey,5.444
+TKM,Turkmenistan,7.06
+UGA,Uganda,6.527
+UKR,Ukraine,15.192
+ARE,United Arab Emirates,1.519
+GBR,United Kingdom,9.398
+USA,United States,8.782
+VIR,United States Virgin Islands,8.702
+URY,Uruguay,9.47
+UZB,Uzbekistan,5.794
+VUT,Vanuatu,5.236
+VEN,Venezuela,7.029
+VNM,Vietnam,6.354
+ESH,Western Sahara,4.936
+YEM,Yemen,5.991
+ZMB,Zambia,6.476
+ZWE,Zimbabwe,7.983
