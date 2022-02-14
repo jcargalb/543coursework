@@ -29,3 +29,13 @@ plot1 = base + coord_polar()
 plot2 = plot1 + facet_wrap(~Name,# one plot per player
                            ncol = 4) # four plot per row
 plot2
+
+# Define the variable ranges: maximum and minimum
+max_min <- data.frame(
+  Goals = c(100, 0), SOT = c(100, 0), Pass = c(100, 0),
+  Assist = c(100, 0))
+rownames(max_min) <- c("Max", "Min")
+
+# Bind the variable ranges to the data
+df <- rbind(max_min, exam_scores)
+df
