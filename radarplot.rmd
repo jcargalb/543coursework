@@ -16,15 +16,15 @@ link=paste0(location,file)
 
 sounders<-read.csv(link, fileEncoding = 'UTF-8-BOM')
 
-base  = ggplot(sounders$Name, 
+base  = ggplot(sounders, 
                aes(x = Variable, 
                    y = Value, 
-                   group = sounders$Name)) +
+                   group = Name)) +
         geom_polygon(fill = 'green',
                      col='blue') 
 
 plot1 = base + coord_polar()
 
-plot2 = plot1 + facet_wrap(~city,# one plot per city
-                           ncol = 10) # ten plot per row
+plot2 = plot1 + facet_wrap(~Name,# one plot per player
+                           ncol = 4) # four plot per row
 plot2
