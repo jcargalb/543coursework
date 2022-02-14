@@ -14,14 +14,12 @@ location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
 file='sounders.csv'
 link=paste0(location,file)
 
-sounders<-read.csv(link)
+sounders<-read.csv(link, fileEncoding = 'UTF-8-BOM')
 
-safeINS_long=melt(sounders,id.vars = sounders$Name)
-
-base  = ggplot(safeINS_long, 
-               aes(x = variable, 
-                   y = value, 
-                   group = city)) + #new
+base  = ggplot(sounders$Name, 
+               aes(x = Variable, 
+                   y = Value, 
+                   group = sounders$Name)) +
         geom_polygon(fill = 'green',
                      col='blue') 
 
