@@ -3,16 +3,10 @@ library(tidyverse)
 library(ggplot2)
 library(magrittr)
 library(rio)
-library(reshape2)
-library(cluster)
-library(MASS) 
-library(reshape2) 
-library(reshape)
-library(fmsb)
 
 #Retrieve the data from my github
 location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
-file='sounders3.csv'
+file='sounders2.csv'
 link=paste0(location,file)
 
 sounders<-read.csv(link, fileEncoding = 'UTF-8-BOM')
@@ -29,13 +23,3 @@ plot1 = base + coord_polar()
 plot2 = plot1 + facet_wrap(~Name,# one plot per player
                            ncol = 4) # four plot per row
 plot2
-
-# Define the variable ranges: maximum and minimum
-max_min <- data.frame(
-  Goals = c(100, 0), SOT = c(100, 0), Pass = c(100, 0),
-  Assist = c(100, 0))
-rownames(max_min) <- c("Max", "Min")
-
-# Bind the variable ranges to the data
-df <- rbind(max_min, sounders)
-df
