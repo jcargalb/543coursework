@@ -1,0 +1,167 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+#tidyverse library
+library(tidyverse)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='wastedata2.csv'
+link=paste0(location,file)
+
+wastedata<-read.csv(link)
+
+#Limiting it to electronics waste
+electronics <- subset(wastedata, Materials.Collected.for.Recycling == "Electronics", -Category)
+
+#Only looking at 10 years because plots look too crowded
+tenyr <- subset(electronics, Year>2008)
+
+#Calling ggplot2 library
+library(ggplot2)
+
+#Assigning year to x axis and tonnage to y axis
+base = ggplot(data = tenyr, 
+             aes(x = Year,
+                 y = Annual.Tonnage))
+
+#plot1 aesthetics				 
+plot1 = base + geom_bar(fill ="00340", stat = 'identity')
+						
+#Title and caption text
+titleText='Metric Tons of Electronics Recycled in Washington State 2009-2018'
+sourceText='Source: WA State Department of Ecology'
+
+plot2 = plot1 + labs(title=titleText,
+                     x ="Year", 
+                     y = "Annual Tonnage",
+                     caption = sourceText)
+					 
+#Average tons of recycled electronics perannum from 2009-2018
+mean(tenyr$Annual.Tonnage)
+
+#Adds dashed line at mean tonnage level
+plot3 = plot2 + geom_hline(yintercept = 28196.4,
+                           linetype="dashed", 
+                           size=1.5,
+                           alpha=0.5, axes=TRUE)
+
+#Adds year labels to x axis
+plot4 = plot3 + scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018))
+
+#Changes y axis labels
+plot5 = plot4 + scale_y_continuous(breaks=c(0, 28196 ,40000))
+                                   
+#Gets rid of grid background
+plot6 = plot5 + theme_classic()
+plot6
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+#tidyverse and ggplot2 libraries
+library(tidyverse)
+library(ggplot2)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='wastedata3.csv'
+link=paste0(location,file)
+
+wastedata<-read.csv(link)
+
+#Reorders manual categories
+wastedata$Category=factor(wastedata$Category,
+                           levels=c("Plastic","Other", "MRW","Glass","Paper", "Organics", "Metal", "C&D"))
+
+#Multi-category barplot based on waste categories
+plot1=ggplot(wastedata, aes(fill=Category, y=Tonnage, x=Year)) + 
+    geom_bar(position="dodge", stat="identity")
+    
+#Stacked barplot with the waste categories
+plot2=ggplot(wastedata, aes(fill=Category, y=Tonnage, x=Year)) + 
+    geom_bar(position="stack", stat="identity")
+    
+#Changes x axis labels
+plot3=plot2+scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018))
+
+#Changes Y axis labels
+plot4=plot3+scale_y_continuous(breaks=c(0, 4000000, 8304723))
+
+#Adds title, source, and labels
+titleText='Metric Tons of Recycling in Washington State 2009-2018'
+sourceText='Source: WA State Department of Ecology'
+
+plot5=plot4+labs(title=titleText,
+                     x ="Year", 
+                     y = "Annual Tonnage",
+                     caption = sourceText)
+            
+#Clean white background
+plot6=plot5+theme_classic()
+
+plot6
+```
+
+### Chart C
+
+```{r}
+#tidyverse and ggplot2 libraries
+library(tidyverse)
+library(ggplot2)
+library(rio)
+library(viridis)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='deathrate.csv'
+link=paste0(location,file)
+
+deathrate<-read.csv(link)
+
+linkMap="https://raw.githubusercontent.com/jcargalb/543coursework/main/worldMap.geojson" 
+
+library(sf)
+                           
+mapWorld=read_sf(linkMap)
+
+mapWorldVars=merge(mapWorld, deathrate, by='ISO3')
+
+library(ggplot2)
+
+base=ggplot(data=mapWorld) + geom_sf(fill='grey90',
+                                     color=NA) + theme_classic()
+                                     
+colMap=base + geom_sf(data=mapWorldVars,
+                       aes(fill=rate),
+                       color=NA)
+                       
+map2=colMap + scale_fill_gradient(low = 'blue',
+                             high= 'red')
+
+map3=map2+scale_fill_viridis_c(option = "C")
+
+map4=map3+labs(fill="Death Rate")
+
+map4
+```
+
