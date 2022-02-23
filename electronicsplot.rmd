@@ -45,4 +45,4 @@ plot5 = plot4 + scale_y_continuous(breaks=c(0, 28196 ,40000))
 #Gets rid of grid background
 plot6 = plot5 + theme_classic()
 
-plot6
+saveRDS(plot6, file = "electronicsplot.rds")
