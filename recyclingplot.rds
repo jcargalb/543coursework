@@ -1,0 +1,40 @@
+library(tidyverse)
+library(ggplot2)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='wastedata3.csv'
+link=paste0(location,file)
+
+wastedata<-read.csv(link)
+
+#Reorders manual categories
+wastedata$Category=factor(wastedata$Category,
+                           levels=c("Plastic","Other", "MRW","Glass","Paper", "Organics", "Metal", "C&D"))
+
+#Multi-category barplot based on waste categories
+plot1=ggplot(wastedata, aes(fill=Category, y=Tonnage, x=Year)) + 
+    geom_bar(position="dodge", stat="identity")
+    
+#Stacked barplot with the waste categories
+plot2=ggplot(wastedata, aes(fill=Category, y=Tonnage, x=Year)) + 
+    geom_bar(position="stack", stat="identity")
+    
+#Changes x axis labels
+plot3=plot2+scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018))
+
+#Changes Y axis labels
+plot4=plot3+scale_y_continuous(breaks=c(0, 4000000, 8304723))
+
+#Adds title, source, and labels
+titleText='Metric Tons of Recycling in Washington State 2009-2018'
+sourceText='Source: WA State Department of Ecology'
+
+plot5=plot4+labs(x ="Year", 
+                     y = "Annual Tonnage",
+                     caption = sourceText)
+            
+#Clean white background
+plot6=plot5+theme_classic()
+
+plot6
