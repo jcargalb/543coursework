@@ -13,7 +13,7 @@ library(flexdashboard)
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Metric Tons of Electronics Recycled in Washington State 2009-2018
 
 ```{r}
 #tidyverse library
@@ -162,6 +162,12 @@ map3=map2+scale_fill_viridis_c(option = "C")
 
 map4=map3+labs(fill="Death Rate")
 
-map4
+titleText='Death Rate by Country (2022)'
+sourceText='Source: World Population Review'
+
+map5=map4+labs(title=titleText,
+                     caption = sourceText)
+
+map5
 ```
 
