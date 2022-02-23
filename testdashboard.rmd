@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "PUBPOL 543"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -8,76 +8,21 @@ output:
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
-```
-
-Column {data-width=650}
------------------------------------------------------------------------
-
-### Metric Tons of Electronics Recycled in Washington State 2009-2018
-
-```{r}
-#tidyverse library
+###
+library(plotly)
 library(tidyverse)
-
-#Retrieve the data from my github
-location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
-file='wastedata2.csv'
-link=paste0(location,file)
-
-wastedata<-read.csv(link)
-
-#Limiting it to electronics waste
-electronics <- subset(wastedata, Materials.Collected.for.Recycling == "Electronics", -Category)
-
-#Only looking at 10 years because plots look too crowded
-tenyr <- subset(electronics, Year>2008)
-
-#Calling ggplot2 library
 library(ggplot2)
-
-#Assigning year to x axis and tonnage to y axis
-basea = ggplot(data = tenyr, 
-             aes(x = Year,
-                 y = Annual.Tonnage))
-
-#plot1 aesthetics				 
-plot1a = basea + geom_bar(fill ="00340", stat = 'identity')
-						
-#Title and caption text
-titleText='Metric Tons of Electronics Recycled in Washington State 2009-2018'
-sourceText='Source: WA State Department of Ecology'
-
-plot2a = plot1a + labs(x ="Year", 
-                     y = "Annual Tonnage",
-                     caption = sourceText)
-
-#Adds dashed line at mean tonnage level
-plot3a = plot2a + geom_hline(yintercept = 28196.4,
-                           linetype="dashed", 
-                           size=1.5,
-                           alpha=0.5, axes=TRUE)
-
-#Adds year labels to x axis
-plot4a = plot3a + scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018))
-
-#Changes y axis labels
-plot5a = plot4a + scale_y_continuous(breaks=c(0, 28196 ,40000))
-                                   
-#Gets rid of grid background
-plot6a = plot5a + theme_classic()
-plot6a
+library(viridis)
 ```
 
-Column {data-width=350}
+Cargal-Bley
+=======================================================================
+Column {data-width=650}
 -----------------------------------------------------------------------
 
 ### Metric Tons of Recycling in Washington State 2009-2018
 
 ```{r}
-#tidyverse and ggplot2 libraries
-library(tidyverse)
-library(ggplot2)
-
 #Retrieve the data from my github
 location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
 file='wastedata3.csv'
@@ -117,15 +62,65 @@ plot6b=plot5b+theme_classic()
 plot6b
 ```
 
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Metric Tons of Electronics Recycled in Washington State 2009-2018
+
+```{r}
+#tidyverse library
+library(tidyverse)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='wastedata2.csv'
+link=paste0(location,file)
+
+wastedata<-read.csv(link)
+
+#Limiting it to electronics waste
+electronics <- subset(wastedata, Materials.Collected.for.Recycling == "Electronics", -Category)
+
+#Only looking at 10 years because plots look too crowded
+tenyr <- subset(electronics, Year>2008)
+
+#Assigning year to x axis and tonnage to y axis
+basea = ggplot(data = tenyr, 
+             aes(x = Year,
+                 y = Annual.Tonnage))
+
+#plot1 aesthetics				 
+plot1a = basea + geom_bar(fill ="00340", stat = 'identity')
+						
+#Title and caption text
+titleText='Metric Tons of Electronics Recycled in Washington State 2009-2018'
+sourceText='Source: WA State Department of Ecology'
+
+plot2a = plot1a + labs(x ="Year", 
+                     y = "Annual Tonnage",
+                     caption = sourceText)
+
+#Adds dashed line at mean tonnage level
+plot3a = plot2a + geom_hline(yintercept = 28196.4,
+                           linetype="dashed", 
+                           size=1.5,
+                           alpha=0.5, axes=TRUE)
+
+#Adds year labels to x axis
+plot4a = plot3a + scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018))
+
+#Changes y axis labels
+plot5a = plot4a + scale_y_continuous(breaks=c(0, 28196 ,40000))
+                                   
+#Gets rid of grid background
+plot6a = plot5a + theme_classic()
+plot6a
+```
+
 ### Death Rate by Country (2022)
 
 ```{r}
-#tidyverse and ggplot2 libraries
-library(tidyverse)
-library(ggplot2)
-library(rio)
-library(viridis)
-
 #Retrieve the data from my github
 location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
 file='deathrate.csv'
@@ -164,4 +159,7 @@ map5=map4+labs(caption = sourceText)
 
 map5
 ```
+
+Conkling
+=======================================================================
 
