@@ -20,6 +20,10 @@ library(viridis)
 ```
 
 ```{r}
+options(knitr.duplicate.label = "allow")
+```
+
+```{r}
 #load Conkling's files
 myWeb="https://github.com/tconkling47/543_dashboard/raw/main/"
 boxplot=readRDS(file=url(paste0(myWeb,"boxplot.rds")))
@@ -58,14 +62,16 @@ knitr::include_graphics(univariate_image)
 knitr::include_graphics(boxplot_image)
 ```
 
+```{r}
 #load Cargal-Bley's files
 cbWeb="https://raw.githubusercontent.com/jcargalb/543coursework/main/"
 deathmap=readRDS(file=url(paste0(cbWeb,"deathmap.rds")))
 deathmap_image="https://github.com/jcargalb/543coursework/raw/main/deathmap.jpg"
 recycling=readRDS(file=url(paste0(cbWeb,"recyclingsplot.rds")))
-recycling_image = "https://github.com/jcargalb/543coursework/raw/main/recyclingplot.jpg"
+recycling_image = "https://github.com/jcargalb/543coursework/raw/main/recycling.jpg"
 electronics=readRDS(file=url(paste0(cbWeb,"electronicsplot.rds")))
-electronics_image = "https://github.com/jcargalb/543coursework/raw/main/electronicsplot.jpg"
+electronics_image = "https://github.com/jcargalb/543coursework/raw/main/electronics.jpg"
+```
 
 Cargal-Bley: Death and Recycling
 =======================================================================
@@ -74,7 +80,7 @@ Column {data-width=650}
 
 ### Death Rate by Country (2022) 
 
-```{r}
+```{r image1, echo = F, fig.cap = "", out.width = '100%'}
 knitr::include_graphics(deathmap_image)
 ```
 
@@ -84,17 +90,12 @@ Column {data-width=350}
 
 ### Metric Tons of Recycling in Washington State (2009-2018) 
 
-```{r}
+```{r image2, echo = F, fig.cap = "", out.width = '100%'}
 knitr::include_graphics(recycling_image)
 ```
 
 ### Metric Tons of Electronics Recycled in Washington State (2009-2018)
 
-```{r}
+```{r image3, echo = F, fig.cap = "", out.width = '100%'}
 knitr::include_graphics(electronics_image)
 ```
-
-
-
-
-
