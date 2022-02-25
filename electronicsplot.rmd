@@ -1,0 +1,49 @@
+library(ggplot2)
+library(tidyverse)
+
+#Retrieve the data from my github
+location='https://raw.githubusercontent.com/jcargalb/543coursework/main/'
+file='wastedata2.csv'
+link=paste0(location,file)
+
+wastedata<-read.csv(link)
+
+#Limiting it to electronics waste
+electronics <- subset(wastedata, Materials.Collected.for.Recycling == "Electronics", -Category)
+
+#Only looking at 10 years because plots look too crowded
+tenyr <- subset(electronics, Year>2008)
+
+#Assigning year to x axis and tonnage to y axis
+basea = ggplot(data = tenyr, 
+             aes(x = Year,
+                 y = Annual.Tonnage))
+
+#plot1 aesthetics				 
+plot1 = basea + geom_bar(fill ="00340", stat = 'identity')
+						
+#Title and caption text
+titleText='Metric Tons of Electronics Recycled in Washington State 2009-2018'
+sourceText='Source: WA State Department of Ecology'
+
+plot2 = plot1 + labs(x ="Year", 
+                     y = "Annual Tonnage",
+                     caption = sourceText)
+
+#Adds dashed line at mean tonnage level
+plot3 = plot2 + geom_hline(yintercept = 28196.4,
+                           linetype="dashed", 
+                           size=1.5,
+                           alpha=0.5, axes=TRUE)
+
+#Adds year labels to x axis
+plot4 = plot3 + scale_x_continuous(breaks = c(2009:2018), labels = factor(2009:2018))
+
+#Changes y axis labels
+plot5 = plot4 + scale_y_continuous(breaks=c(0, 28196 ,40000))
+                                   
+#Gets rid of grid background
+plot6 = plot5 + theme_classic()
+
+saveRDS(plot6, file = "../Documents/electronicsplot.rds")
+
