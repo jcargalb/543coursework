@@ -39,3 +39,5 @@ sourceText='Source: World Population Review'
 map5=map4+labs(caption = sourceText)
 
 map5
+
+saveRDS(map5, file = "../Documents/deathmap.rds")

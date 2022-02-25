@@ -38,3 +38,5 @@ plot5=plot4+labs(x ="Year",
 plot6=plot5+theme_classic()
 
 plot6
+
+saveRDS(plot6, file = "../Documents/recyclingsplot.rds")
