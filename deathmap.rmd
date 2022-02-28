@@ -31,12 +31,12 @@ map2=colMap + scale_fill_gradient(low = 'blue',
 
 map3=map2+scale_fill_viridis_c(option = "C")
 
-map4=map3+labs(fill="Death Rate")
+map4=map3+labs(fill="Death Rate \n(no data in gray)")
 
-titleText='Death Rate by Country (2022)'
+titleText='Global Death Rates per 1,000 in 2022'
 sourceText='Source: World Population Review'
 
-map5=map4+labs(caption = sourceText)
+map5=map4+labs(title = titleText, caption = sourceText)
 
 map5
 

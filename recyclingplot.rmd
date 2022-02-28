@@ -32,7 +32,7 @@ sourceText='Source: WA State Department of Ecology'
 
 plot5=plot4+labs(x ="Year", 
                      y = "Annual Tonnage",
-                     caption = sourceText)
+                     title=titleText, caption = sourceText)
             
 #Clean white background
 plot6=plot5+theme_classic()
