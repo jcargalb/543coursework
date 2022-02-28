@@ -28,7 +28,7 @@ sourceText='Source: WA State Department of Ecology'
 
 plot2 = plot1 + labs(x ="Year", 
                      y = "Annual Tonnage",
-                     caption = sourceText)
+                     title=titleText, caption = sourceText)
 
 #Adds dashed line at mean tonnage level
 plot3 = plot2 + geom_hline(yintercept = 28196.4,
